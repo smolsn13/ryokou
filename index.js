@@ -2,6 +2,7 @@ require('dotenv').config();
 var flash = require('connect-flash');
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
+var request = require('request');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('./config/ppConfig');
@@ -42,15 +43,23 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 app.get('/search', function(req, res) {
-  request({
-    url: 'GET https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972',
-  }, function(error, response, body) {
+
+var options =
+  {
+    url: 'https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972',
+    headers: {
+      'Authorization': 'Bearer' + ' ' + process.env.YELP_KEY
+    }
+  };
+
+function callback(error, response, body) {
     if (!error && response.statusCode === 200) {
       var dataObj = JSON.parse(body);
       console.dir(dataObj);
-      res.send(dataObj.Search);
+      res.send(dataObj);
     }
-  })
+  }
+request(options, callback);
 });
 
 app.use('/auth', require('./controllers/auth'));
