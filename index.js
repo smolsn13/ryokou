@@ -41,6 +41,18 @@ app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
 
+app.get('/search', function(req, res) {
+  request({
+    url: 'GET https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972',
+  }, function(error, response, body) {
+    if (!error && response.statusCode === 200) {
+      var dataObj = JSON.parse(body);
+      console.dir(dataObj);
+      res.send(dataObj.Search);
+    }
+  })
+});
+
 app.use('/auth', require('./controllers/auth'));
 
 var server = app.listen(process.env.PORT || 3000);
