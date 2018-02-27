@@ -46,7 +46,7 @@ app.get('/search', function(req, res) {
 
 var options =
   {
-    url: 'https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972',
+    url: 'https://api.yelp.com/v3/businesses/search?location=Seattle&categories=bars,french',
     headers: {
       'Authorization': 'Bearer' + ' ' + process.env.YELP_KEY
     }
