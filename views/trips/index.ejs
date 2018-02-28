@@ -1,0 +1,26 @@
+<h1>Trips</h1>
+
+<% trips.forEach(function(trip) { %>
+
+<% if(user.trips.length < 1) { %>
+  <p class="text-info">You don't have any saved trips yet. Add a trip to get started!</p>
+<% } else { %>
+<% user.trips.forEach(function(t) { %>
+  <a href="/trips/<%= t.id %>">
+    #<%= t.name %>
+  </a>
+  <% }) %>
+<% }; %>
+
+  <div class="well">
+    <h2>
+      <a href="/trips/<%= trip.id %>">
+        <%= trip.getFullName() %>
+      </a>
+    </h2>
+  </div>
+<% }); %>
+
+<hr />
+
+<a href="/">&larr; Back Home</a>

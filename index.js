@@ -4,6 +4,7 @@ var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var request = require('request');
 var bodyParser = require('body-parser');
+var db = require('./models');
 var session = require('express-session');
 var passport = require('./config/ppConfig');
 var isLoggedIn = require('./middleware/isLoggedIn');
@@ -63,6 +64,7 @@ request(options, callback);
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/trip', require('./controllers/trip'));
 
 var server = app.listen(process.env.PORT || 3000);
 

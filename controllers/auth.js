@@ -12,7 +12,8 @@ router.post('/signup', function(req, res) {
   db.user.findOrCreate({
     where: { email: req.body.email},
     defaults: {  // default values when email is not found
-      name: req.body.name,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       password: req.body.password
     }
   }).spread(function(user, created) {  //use spread promise because it is returning two values (similar to 'then' but for multiple values)
@@ -41,7 +42,7 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
+  successRedirect: '/trips/index',
   successFlash: 'You have logged in!',
   failureRedirect: '/auth/login',
   failureFlash: 'Invalid username and/or password'
