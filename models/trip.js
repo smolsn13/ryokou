@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   trip.associate = function(models) {
     models.trip.belongsTo(models.user);
+    models.trip.hasMany(models.business);
   };
   return trip;
 };
