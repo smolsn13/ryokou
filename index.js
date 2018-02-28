@@ -46,7 +46,7 @@ app.get('/search', function(req, res) {
 
 var options =
   {
-    url: 'https://api.yelp.com/v3/businesses/search?location=Seattle&categories=bars,french',
+    url: 'https://api.yelp.com/v3/businesses/search?location=Seattle&categories=food',
     headers: {
       'Authorization': 'Bearer' + ' ' + process.env.YELP_KEY
     }
