@@ -1,0 +1,14 @@
+<h1><%= trip.city %></h1>
+
+<% trips.forEach(function(trip) { %>
+
+  <% if(trips.length < 1) { %>
+    <p class="text-info">You don't have any saved trips yet. Add a trip to get started!</p>
+  <% } else { %>
+    <div class="well">
+      <a href="/trips/<%= trip.id %>">
+        <%= trip.city %>
+      </a>
+    </div>
+  <% } %>
+<% }); %>

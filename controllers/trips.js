@@ -20,9 +20,12 @@ router.get('/', isLoggedIn, function(req, res) {
 });
 
 router.post('/', function(req, res) {
-  db.trip.create({
-    city: req.body.city
-  })
+  db.user.findById(req.user.id)
+    .then(function(user) {
+      user.createTrip({
+        city: req.body.city
+      })
+    })
     .then(function(trip) {
       res.redirect('/trips');
     })
@@ -31,9 +34,50 @@ router.post('/', function(req, res) {
       });
 });
 
-router.get('/new', function(req, res) {
-  res.render('trips/new');
+router.get('/new', isLoggedIn, function(req, res) {
+  db.trip.findAll({
+    where: {
+      userId: req.body.userId
+    },
+    include: [db.user]
+  })
+  .then(function(trips) {
+    res.render('trips/new', { trips: trips });
+  })
+  .catch(function(error) {
+    res.status(400).render('main/404');
+  });
 });
+
+router.get('/:id', isLoggedIn, function(req, res) {
+  db.trip.findOne({
+    where: { id: req.params.id },
+    // include: [db.user]
+  })
+  .then(function(trip) {
+    if (!trip) throw Error();
+    res.render('trips/show', { trip: trip });
+  })
+  .catch(function(error) {
+    res.status(400).render('main/404');
+  });
+});
+
+// router.post('/:id/businesses', function(req, res) {
+//   db.trip.findById(req.trip.id)
+//     .then(function(trip) {
+//       trip.createBusiness({
+//         name: req.body.name,
+//         category: req.body.category,
+//       })
+//     })
+//     .then(function(trip) {
+//       res.redirect('/trips');
+//     })
+//       .catch(function(error) {
+//         res.status(400).render('main/404');
+//       });
+// });
 
 
 

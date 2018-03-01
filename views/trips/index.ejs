@@ -1,23 +1,19 @@
 <h1>Trips</h1>
 
+
+<p>Here are your trips:</p>
+
 <% trips.forEach(function(trip) { %>
 
-<% if(user.trips.length < 1) { %>
-  <p class="text-info">You don't have any saved trips yet. Add a trip to get started!</p>
-<% } else { %>
-<% user.trips.forEach(function(t) { %>
-  <a href="/trips/<%= t.id %>">
-    <%= t.name %>
-  </a>
-  <% }) %>
-<% }; %>
-
-  <div class="well">
-    <h2>
+  <% if(trips.length < 1) { %>
+    <p class="text-info">You don't have any saved trips yet. Add a trip to get started!</p>
+  <% } else { %>
+    <div class="well">
       <a href="/trips/<%= trip.id %>">
+        <%= trip.city %>
       </a>
-    </h2>
-  </div>
+    </div>
+  <% } %>
 <% }); %>
 
 <hr />
