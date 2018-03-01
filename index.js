@@ -64,7 +64,7 @@ request(options, callback);
 });
 
 app.use('/auth', require('./controllers/auth'));
-app.use('/trip', require('./controllers/trip'));
+app.use('/trips', require('./controllers/trips'));
 
 var server = app.listen(process.env.PORT || 3000);
 
