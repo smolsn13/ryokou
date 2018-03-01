@@ -1,13 +1,13 @@
 <h1><%= trip.city %></h1>
 
-<% trips.forEach(function(trip) { %>
+<% businesses.forEach(function(business) { %>
 
-  <% if(trips.length < 1) { %>
-    <p class="text-info">You don't have any saved trips yet. Add a trip to get started!</p>
+  <% if(businesses.length < 1) { %>
+    <p class="text-info">You don't have any saved activities yet. Add an activity to get started!</p>
   <% } else { %>
     <div class="well">
-      <a href="/trips/<%= trip.id %>">
-        <%= trip.city %>
+      <a href="/businesses/<%= business.name %>">
+        <%= business.name %>
       </a>
     </div>
   <% } %>

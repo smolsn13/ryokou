@@ -52,7 +52,6 @@ router.get('/new', isLoggedIn, function(req, res) {
 router.get('/:id', isLoggedIn, function(req, res) {
   db.trip.findOne({
     where: { id: req.params.id },
-    // include: [db.user]
   })
   .then(function(trip) {
     if (!trip) throw Error();
@@ -63,21 +62,22 @@ router.get('/:id', isLoggedIn, function(req, res) {
   });
 });
 
-// router.post('/:id/businesses', function(req, res) {
-//   db.trip.findById(req.trip.id)
-//     .then(function(trip) {
-//       trip.createBusiness({
-//         name: req.body.name,
-//         category: req.body.category,
-//       })
-//     })
-//     .then(function(trip) {
-//       res.redirect('/trips');
-//     })
-//       .catch(function(error) {
-//         res.status(400).render('main/404');
-//       });
-// });
+router.post('/:id/businesses', function(req, res) {
+  db.trip.findById(req.trip.id)
+    .then(function(trip) {
+      trip.createBusiness({
+        name: req.body.name,
+        category: req.body.category,
+        url: req.body.url
+      })
+    })
+    .then(function(trip) {
+      res.redirect('/trips');
+    })
+      .catch(function(error) {
+        res.status(400).render('main/404');
+      });
+});
 
 
 
