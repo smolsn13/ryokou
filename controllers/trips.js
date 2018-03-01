@@ -51,7 +51,7 @@ router.get('/new', isLoggedIn, function(req, res) {
 
 router.get('/:id', isLoggedIn, function(req, res) {
   db.trip.findOne({
-    where: { id: req.params.id },
+    where: { id: req.params.id }
   })
   .then(function(trip) {
     if (!trip) throw Error();

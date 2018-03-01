@@ -1,14 +1,22 @@
 <h1><%= trip.city %></h1>
 
-<% businesses.forEach(function(business) { %>
+<h4>Add a place to visit:</h4>
+<br />
+<form method="POST" class="form-horizontal" action="/trips/<%= trip.id %>/businesses">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" class="form-control" name="name" placeholder="Enter the business name..." />
+    <br />
+    <label for="content">Category</label>
+    <input type="text" id="category" rows="3" class="form-control" name="content" placeholder="Enter the type of business..." />
+    <input type="hidden" name="tripId" value="<%= trip.id %>">
+    <br />
+    <label for="content">URL</label>
+    <input type="text" id="url" rows="3" class="form-control" name="url" placeholder="Enter the business URL..." />
+    <input type="hidden" name="tripId" value="<%= trip.id %>">
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
 
-  <% if(businesses.length < 1) { %>
-    <p class="text-info">You don't have any saved activities yet. Add an activity to get started!</p>
-  <% } else { %>
-    <div class="well">
-      <a href="/businesses/<%= business.name %>">
-        <%= business.name %>
-      </a>
-    </div>
-  <% } %>
-<% }); %>
+<a href="/trips">&larr; Back to My Trips</a>
