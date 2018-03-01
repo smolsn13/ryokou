@@ -1,9 +1,14 @@
 var express = require('express');
 var db = require('../models');
+var isLoggedIn = require('../middleware/isLoggedIn');
 var router = express.Router();
 
-router.get('/', function(req, res) {
-  db.trip.findAll()
+router.get('/', isLoggedIn, function(req, res) {
+  db.trip.findAll({
+    where: {
+      userId: req.user.id
+    }
+  })
     .then(function(trips) {
       console.log(trips);
       res.render('trips/index', { trips: trips });
