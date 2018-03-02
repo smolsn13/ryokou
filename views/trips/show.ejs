@@ -1,26 +1,160 @@
 <h1><%= trip.city %></h1>
 
-
-
 <div class="row">
-  <form method="GET" class="col s12" action="/trips/<%= trip.id %>/businesses">
+  <form method="GET" id="main" class="col s12" action="/trips/<%= trip.id %>/businesses">
       <div class="input-field col s12">
-        <select>
+        <select id="categoryselect">
           <option value="" disabled selected>Select a category...</option>
-          <option value="1">Active Lifestyle</option>
-          <option value="2">Arts/Entertainment</option>
-          <option value="3">Beauty/Spas</option>
-          <option value="4">Food</option>
-          <option value="5">Hotels/Travel</option>
-          <option value="6">Nightlife</option>
-          <option value="7">Restaurants</option>
-          <option value="8">Shopping</option>
+          <option value="1" id="active">Active Lifestyle</option>
+          <option value="2" id="entertainment">Arts/Entertainment</option>
+          <option value="3" id="beauty">Beauty/Spas</option>
+          <option value="4" id="food">Food</option>
+          <option value="5" id="hotels">Hotels/Travel</option>
+          <option value="6" id="nightlife">Nightlife</option>
+          <option value="7" id="restaurants">Restaurants</option>
+          <option value="8" id="shopping">Shopping</option>
         </select>
         <label>What are you looking for on this journey?</label>
       </div>
   </form>
 </div>
 <br />
+
+<div class="row categories" id="activeform">
+  <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+      <div class="input-field col s6">
+        <select id="activeselect">
+          <option value="" disabled selected>Select a category...</option>
+          <option value="1">Amusement Parks</option>
+          <option value="2">Aquariums</option>
+          <option value="3">Bungee Jumping</option>
+          <option value="4">Parks</option>
+          <option value="5">Ziplining</option>
+        </select>
+        <input type="hidden" name="location" value="<%= trip.city %>"
+        <label>What are you looking for?</label>
+      </div>
+  </form>
+</div>
+
+<div class="row categories" id="entertainmentform">
+  <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+      <div class="input-field col s6">
+        <select id="entertainmentselect">
+          <option value="" disabled selected>Select a category...</option>
+          <option value="1">Cinema</option>
+          <option value="2">Festivals</option>
+          <option value="3">Museums</option>
+          <option value="4">Music Venues</option>
+          <option value="5">Wineries</option>
+        </select>
+        <input type="hidden" name="location" value="<%= trip.city %>"
+        <label>What are you looking for?</label>
+      </div>
+  </form>
+</div>
+
+<div class="row categories" id="beautyform">
+  <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+      <div class="input-field col s6">
+        <select id="beautyselect">
+          <option value="" disabled selected>Select a category...</option>
+          <option value="1">Day Spas</option>
+          <option value="2">Hair Salons</option>
+          <option value="3">Nail Salons</option>
+          <option value="4">Piercing</option>
+          <option value="5">Tattoo</option>
+        </select>
+        <input type="hidden" name="location" value="<%= trip.city %>"
+        <label>What are you looking for?</label>
+      </div>
+  </form>
+</div>
+
+<div class="row categories" id="foodform">
+  <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+      <div class="input-field col s6">
+        <select id="foodselect">
+          <option value="" disabled selected>Select a category...</option>
+          <option value="1">Beer, Wine & Spirits</option>
+          <option value="2">Coffee & Tea</option>
+          <option value="3">Desserts</option>
+          <option value="4">Food Trucks</option>
+          <option value="5">Specialty Food</option>
+        </select>
+        <input type="hidden" name="location" value="<%= trip.city %>"
+        <label>What are you looking for?</label>
+      </div>
+  </form>
+</div>
+
+<div class="row categories" id="hotelsform">
+  <form method="GET"  class="col s6" action="/trips/<%= trip.id %>/businesses">
+      <div class="input-field col s6">
+        <select id="hotelsselect">
+          <option value="" disabled selected>Select a category...</option>
+          <option value="1">Bed & Breakfast</option>
+          <option value="2">Car Rentals</option>
+          <option value="3">Hotels</option>
+          <option value="4">Resorts</option>
+          <option value="5">Tours</option>
+        </select>
+        <input type="hidden" name="location" value="<%= trip.city %>"
+        <label>What are you looking for?</label>
+      </div>
+  </form>
+</div>
+
+<div class="row categories" id="nightlifeform">
+  <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+      <div class="input-field col s6">
+        <select id="nightlifeselect">
+          <option value="" disabled selected>Select a category...</option>
+          <option value="1">Bars</option>
+          <option value="2">Comedy Clubs</option>
+          <option value="3">Dance Clubs</option>
+          <option value="4">Karaoke</option>
+          <option value="5">Piano Bars</option>
+        </select>
+        <input type="hidden" name="location" value="<%= trip.city %>"
+        <label>What are you looking for?</label>
+      </div>
+  </form>
+</div>
+
+<div class="row categories" id="restaurantsform">
+  <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+      <div class="input-field col s6">
+        <select id="restaurantsselect">
+          <option value="" disabled selected>Select a category...</option>
+          <option value="1">Asian Fusion</option>
+          <option value="2">Breakfast & Brunch</option>
+          <option value="3">Cafes</option>
+          <option value="4">Delis</option>
+          <option value="5">Fast Food</option>
+        </select>
+        <input type="hidden" name="location" value="<%= trip.city %>"
+        <label>What are you looking for?</label>
+      </div>
+  </form>
+</div>
+
+<div class="row categories" id="shoppingform">
+  <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+      <div class="input-field col s6">
+        <select id="shoppingselect">
+          <option value="" disabled selected>Select a category...</option>
+          <option value="1">Books, Magazines, Music & Video</option>
+          <option value="2">Department Stores</option>
+          <option value="3">Fashion</option>
+          <option value="4">Public Markets</option>
+          <option value="5">Souvenir Shops</option>
+        </select>
+        <input type="hidden" name="location" value="<%= trip.city %>"
+        <label>What are you looking for?</label>
+      </div>
+  </form>
+</div>
 
 <h4>Add a place to visit:</h4>
 <br />
