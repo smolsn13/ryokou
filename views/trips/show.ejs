@@ -21,7 +21,7 @@
 <br />
 
 <div class="row categories" id="activeform">
-  <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+  <form class="col s6" action="/trips/<%= trip.id %>/businesses">
       <div class="input-field col s6">
         <select id="activeselect">
           <option value="" disabled selected>Select a category...</option>
@@ -31,9 +31,12 @@
           <option value="4">Parks</option>
           <option value="5">Ziplining</option>
         </select>
-        <input type="hidden" name="location" value="<%= trip.city %>"
         <label>What are you looking for?</label>
+        <input type="hidden" name="location" value="<%= trip.city %>">
       </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Search
+        <i class="material-icons right">search</i>
+      </button>
   </form>
 </div>
 
@@ -48,9 +51,12 @@
           <option value="4">Music Venues</option>
           <option value="5">Wineries</option>
         </select>
-        <input type="hidden" name="location" value="<%= trip.city %>"
         <label>What are you looking for?</label>
+        <input type="hidden" name="location" value="<%= trip.city %>">
       </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Search
+        <i class="material-icons right">search</i>
+      </button>
   </form>
 </div>
 
@@ -65,9 +71,12 @@
           <option value="4">Piercing</option>
           <option value="5">Tattoo</option>
         </select>
-        <input type="hidden" name="location" value="<%= trip.city %>"
         <label>What are you looking for?</label>
+        <input type="hidden" name="location" value="<%= trip.city %>">
       </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Search
+        <i class="material-icons right">search</i>
+      </button>
   </form>
 </div>
 
@@ -82,9 +91,12 @@
           <option value="4">Food Trucks</option>
           <option value="5">Specialty Food</option>
         </select>
-        <input type="hidden" name="location" value="<%= trip.city %>"
         <label>What are you looking for?</label>
+        <input type="hidden" name="location" value="<%= trip.city %>">
       </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Search
+        <i class="material-icons right">search</i>
+      </button>
   </form>
 </div>
 
@@ -99,9 +111,12 @@
           <option value="4">Resorts</option>
           <option value="5">Tours</option>
         </select>
-        <input type="hidden" name="location" value="<%= trip.city %>"
         <label>What are you looking for?</label>
+        <input type="hidden" name="location" value="<%= trip.city %>">
       </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Search
+        <i class="material-icons right">search</i>
+      </button>
   </form>
 </div>
 
@@ -116,9 +131,12 @@
           <option value="4">Karaoke</option>
           <option value="5">Piano Bars</option>
         </select>
-        <input type="hidden" name="location" value="<%= trip.city %>"
         <label>What are you looking for?</label>
+        <input type="hidden" name="location" value="<%= trip.city %>">
       </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Search
+        <i class="material-icons right">search</i>
+      </button>
   </form>
 </div>
 
@@ -133,9 +151,12 @@
           <option value="4">Delis</option>
           <option value="5">Fast Food</option>
         </select>
-        <input type="hidden" name="location" value="<%= trip.city %>"
         <label>What are you looking for?</label>
+        <input type="hidden" name="location" value="<%= trip.city %>">
       </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Search
+        <i class="material-icons right">search</i>
+      </button>
   </form>
 </div>
 
@@ -150,30 +171,14 @@
           <option value="4">Public Markets</option>
           <option value="5">Souvenir Shops</option>
         </select>
-        <input type="hidden" name="location" value="<%= trip.city %>"
         <label>What are you looking for?</label>
+        <input type="hidden" name="location" value="<%= trip.city %>">
       </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Search
+        <i class="material-icons right">search</i>
+      </button>
   </form>
 </div>
-
-<h4>Add a place to visit:</h4>
-<br />
-<form method="POST" class="form-horizontal" action="/trips/<%= trip.id %>/businesses">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" id="name" class="form-control" name="name" placeholder="Enter the business name..." />
-    <br />
-    <label for="content">Category</label>
-    <input type="text" id="category" rows="3" class="form-control" name="category" placeholder="Enter the type of business..." />
-    <input type="hidden" name="tripId" value="<%= trip.id %>">
-    <br />
-    <label for="content">URL</label>
-    <input type="text" id="url" rows="3" class="form-control" name="url" placeholder="Enter the business URL..." />
-    <input type="hidden" name="tripId" value="<%= trip.id %>">
-    <br />
-    <button type="submit" class="waves-effect waves-light btn">Submit</button>
-  </div>
-</form>
 
 <br />
 <a href="/trips">&larr; Back to My Trips</a>

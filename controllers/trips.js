@@ -75,9 +75,7 @@ router.get('/:id/businesses', function(req, res) {
 
   function callback(error, response, body) {
       if (!error && response.statusCode === 200) {
-        var dataObj = JSON.parse(body);
-        console.dir(dataObj);
-        res.render('businesses/show', {});
+        res.json(JSON.parse(body));
       }
     }
   request(options, callback);
