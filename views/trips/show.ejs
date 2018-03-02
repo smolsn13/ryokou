@@ -1,41 +1,26 @@
 <h1><%= trip.city %></h1>
 
-<!-- <ul>
-  <li><%= business.name %></li>
-</ul> -->
-
-<% if (businesses.length < 1)
 
 
 <div class="row">
   <form method="GET" class="col s12" action="/trips/<%= trip.id %>/businesses">
-    <div class="row">
-      <div class="input-field col s12">
+      <div class="input-field col s6">
         <select>
-          <option value="" disabled selected>Choose your option</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
+          <option value="" disabled selected>Choose what type of place you want to visit:</option>
+          <option value="1">Active Lifestyle</option>
+          <option value="2">Arts/Entertainment</option>
+          <option value="3">Beauty/Spas</option>
+          <option value="4">Food</option>
+          <option value="5">Hotels/Travel</option>
+          <option value="6">Nightlife</option>
+          <option value="7">Restaurants</option>
+          <option value="8">Shopping</option>
         </select>
-        <label>Select a city</label>
+        <label>Select a category</label>
       </div>
-
-
-      <label for="name">Name</label>
-      <input type="text" id="name" class="input-field col s6" name="name" placeholder="Enter the business name..." />
-      <br />
-      <label for="content">Category</label>
-      <input type="text" id="category" rows="3" class="form-control" name="category" placeholder="Enter the type of business..." />
-      <input type="hidden" name="tripId" value="<%= trip.id %>">
-      <br />
-      <label for="content">URL</label>
-      <input type="text" id="url" rows="3" class="form-control" name="url" placeholder="Enter the business URL..." />
-      <input type="hidden" name="tripId" value="<%= trip.id %>">
-      <br />
-      <button type="submit" class="waves-effect waves-light btn">Submit</button>
-    </div>
   </form>
 </div>
+<br />
 
 <h4>Add a place to visit:</h4>
 <br />
