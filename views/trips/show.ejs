@@ -4,9 +4,9 @@
 
 <div class="row">
   <form method="GET" class="col s12" action="/trips/<%= trip.id %>/businesses">
-      <div class="input-field col s6">
+      <div class="input-field col s12">
         <select>
-          <option value="" disabled selected>Choose what type of place you want to visit:</option>
+          <option value="" disabled selected>Select a category...</option>
           <option value="1">Active Lifestyle</option>
           <option value="2">Arts/Entertainment</option>
           <option value="3">Beauty/Spas</option>
@@ -16,7 +16,7 @@
           <option value="7">Restaurants</option>
           <option value="8">Shopping</option>
         </select>
-        <label>Select a category</label>
+        <label>What are you looking for on this journey?</label>
       </div>
   </form>
 </div>
@@ -41,4 +41,5 @@
   </div>
 </form>
 
+<br />
 <a href="/trips">&larr; Back to My Trips</a>

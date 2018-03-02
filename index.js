@@ -13,6 +13,7 @@ var app = express();
 
 app.set('view engine', 'ejs');
 
+app.use(express.static(__dirname + '/public/'));
 app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
@@ -42,7 +43,7 @@ app.get('/', function(req, res) {
 app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
-// 
+//
 // app.get('/search', function(req, res) {
 //
 // var options =
