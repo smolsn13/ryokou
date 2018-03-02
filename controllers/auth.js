@@ -42,8 +42,8 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/trips',
   successFlash: 'You have logged in!',
+  successRedirect: '/trips',
   failureRedirect: '/auth/login',
   failureFlash: 'Invalid username and/or password'
 }));
