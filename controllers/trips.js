@@ -77,7 +77,10 @@ router.get('/:id/businesses', function(req, res) {
 
   function callback(error, response, body) {
       if (!error && response.statusCode === 200) {
-        res.json(JSON.parse(body));
+        // res.json(JSON.parse(body));
+        var dataObj = JSON.parse(body);
+        console.log(dataObj);
+        res.render('businesses/results', {businesses: dataObj});
       }
     }
   request(options, callback);

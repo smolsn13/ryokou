@@ -1,0 +1,25 @@
+<h1>Some places you may want to visit:</h1>
+
+<% businesses.businesses.forEach(function(business) { %>
+
+    <div class="container">
+      <div class="row s8">
+        <ul>
+          <li>
+            <p><%= business.name %></p>
+            <img src="<%= business.image_url %>"</img>
+            <p>Average Rating: <%= business.rating %></p>
+            <p>Number of Reviews: <%= business.review_count %></p>
+            <p>Price: <%= business.price %></p>
+            <p>Address: <%= business.location.display_address %></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% }); %>
+
+<hr />
+
+<br />
+
+<a href="/">&larr; Back Home</a>

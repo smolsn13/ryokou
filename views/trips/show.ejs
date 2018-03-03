@@ -45,11 +45,11 @@
       <div class="input-field col s6">
         <select id="artselect" name="category">
           <option value="" disabled selected>Select a category...</option>
-          <option value="1">Cinema</option>
-          <option value="2">Festivals</option>
-          <option value="3">Museums</option>
-          <option value="4">Music Venues</option>
-          <option value="5">Wineries</option>
+          <option value="movietheaters, All">Cinema</option>
+          <option value="festivals, All">Festivals</option>
+          <option value="museums, All">Museums</option>
+          <option value="musicvenues, All">Music Venues</option>
+          <option value="wineries">Wineries</option>
         </select>
         <label>What are you looking for?</label>
         <input type="hidden" name="location" value="<%= trip.city %>">
@@ -65,11 +65,11 @@
       <div class="input-field col s6">
         <select id="beautyselect" name="category">
           <option value="" disabled selected>Select a category...</option>
-          <option value="1">Day Spas</option>
-          <option value="2">Hair Salons</option>
-          <option value="3">Nail Salons</option>
-          <option value="4">Piercing</option>
-          <option value="5">Tattoo</option>
+          <option value="spas, All">Day Spas</option>
+          <option value="hair, All">Hair Salons</option>
+          <option value="othersalons, All">Nail Salons</option>
+          <option value="piercing, All">Piercing</option>
+          <option value="tattoo, All">Tattoo</option>
         </select>
         <label>What are you looking for?</label>
         <input type="hidden" name="location" value="<%= trip.city %>">
@@ -85,11 +85,11 @@
       <div class="input-field col s6">
         <select id="foodselect" name="category">
           <option value="" disabled selected>Select a category...</option>
-          <option value="1">Beer, Wine & Spirits</option>
-          <option value="2">Coffee & Tea</option>
-          <option value="3">Desserts</option>
-          <option value="4">Food Trucks</option>
-          <option value="5">Specialty Food</option>
+          <option value="food, All">Beer, Wine & Spirits</option>
+          <option value="coffee, All">Coffee & Tea</option>
+          <option value="desserts, All">Desserts</option>
+          <option value="foodtrucks">Food Trucks</option>
+          <option value="gourmet">Gourmet Foods (candy, cheese, healthfoods, meat, seafood)</option>
         </select>
         <label>What are you looking for?</label>
         <input type="hidden" name="location" value="<%= trip.city %>">
@@ -103,13 +103,13 @@
 <div class="row categories" id="hotelsform">
   <form method="GET"  class="col s6" action="/trips/<%= trip.id %>/businesses">
       <div class="input-field col s6">
-        <select id="hotelsselect" name="category">
+        <select id="hotelselect" name="category">
           <option value="" disabled selected>Select a category...</option>
-          <option value="1">Bed & Breakfast</option>
-          <option value="2">Car Rentals</option>
-          <option value="3">Hotels</option>
-          <option value="4">Resorts</option>
-          <option value="5">Tours</option>
+          <option value="bedbreakfast">Bed & Breakfast</option>
+          <option value="carrental, All">Car Rentals</option>
+          <option value="hotels, All">Hotels</option>
+          <option value="resorts, All">Resorts</option>
+          <option value="tours, All">Tours</option>
         </select>
         <label>What are you looking for?</label>
         <input type="hidden" name="location" value="<%= trip.city %>">
@@ -125,11 +125,11 @@
       <div class="input-field col s6">
         <select id="nightlifeselect" name="category">
           <option value="" disabled selected>Select a category...</option>
-          <option value="1">Bars</option>
-          <option value="2">Comedy Clubs</option>
-          <option value="3">Dance Clubs</option>
-          <option value="4">Karaoke</option>
-          <option value="5">Piano Bars</option>
+          <option value="bars, All">Bars</option>
+          <option value="comedyclubs">Comedy Clubs</option>
+          <option value="danceclubs, All">Dance Clubs</option>
+          <option value="karaoke, All">Karaoke</option>
+          <option value="pianobars">Piano Bars</option>
         </select>
         <label>What are you looking for?</label>
         <input type="hidden" name="location" value="<%= trip.city %>">
@@ -143,13 +143,13 @@
 <div class="row categories" id="restaurantsform">
   <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
       <div class="input-field col s6">
-        <select id="restaurantsselect" name="category">
+        <select id="restaurantselect" name="category">
           <option value="" disabled selected>Select a category...</option>
-          <option value="1">Asian Fusion</option>
-          <option value="2">Breakfast & Brunch</option>
-          <option value="3">Cafes</option>
-          <option value="4">Delis</option>
-          <option value="5">Fast Food</option>
+          <option value="asianfusion, All">Asian Fusion</option>
+          <option value="breakfast_brunch, All">Breakfast & Brunch</option>
+          <option value="cafes">Cafes</option>
+          <option value="delis">Delis</option>
+          <option value="hotdogs, All">Fast Food</option>
         </select>
         <label>What are you looking for?</label>
         <input type="hidden" name="location" value="<%= trip.city %>">
@@ -165,11 +165,11 @@
       <div class="input-field col s6">
         <select id="shoppingselect" name="category">
           <option value="" disabled selected>Select a category...</option>
-          <option value="1">Books, Magazines, Music & Video</option>
-          <option value="2">Department Stores</option>
-          <option value="3">Fashion</option>
-          <option value="4">Public Markets</option>
-          <option value="5">Souvenir Shops</option>
+          <option value="media, All">Books, Magazines, Music & Video</option>
+          <option value="deptstores, All">Department Stores</option>
+          <option value="fashion, All">Fashion</option>
+          <option value="publicmarkets, All">Public Markets</option>
+          <option value="souvenirs">Souvenir Shops</option>
         </select>
         <label>What are you looking for?</label>
         <input type="hidden" name="location" value="<%= trip.city %>">
