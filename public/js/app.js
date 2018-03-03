@@ -4,30 +4,30 @@ $(document).ready(function() {
   $('#categoryselect').change(function() {
     $('.categories').hide();
     var categoryselect = $('#categoryselect').val();
-    categoryselect = parseInt(categoryselect); // val() returns a string and we want an integer
+    // categoryselect = parseInt(categoryselect); // val() returns a string and we want an integer
     switch (categoryselect) {
-      case 1:
+      case 'active, All': // 'amusementparks' change all switch cases to text instead of integers, remove the parseInt line
         $('#activeform').show();
         break;
-      case 2:
-        $('#entertainmentform').show();
+      case 'arts, All':
+        $('#artsform').show();
         break;
-      case 3:
+      case 'beautysvc, All':
         $('#beautyform').show();
         break;
-      case 4:
+      case 'food, All':
         $('#foodform').show();
         break;
-      case 5:
+      case 'hotelstravel, All':
         $('#hotelsform').show();
         break;
-      case 6:
+      case 'nightlife, All':
         $('#nightlifeform').show();
         break;
-      case 7:
+      case 'restaurants, All':
         $('#restaurantsform').show();
         break;
-      case 8:
+      case 'shopping, All':
         $('#shoppingform').show();
         break;
       }

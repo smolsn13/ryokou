@@ -1,3 +1,7 @@
+.container {
+  margin-top: 50px;
+}
+
 .categories {
   display: none;
 }

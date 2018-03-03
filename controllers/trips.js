@@ -65,6 +65,8 @@ router.get('/:id', isLoggedIn, function(req, res) {
 });
 
 router.get('/:id/businesses', function(req, res) {
+  var category = req.query.category;
+  category = category.replace(' ', '').toLowerCase();
   var options =
     {
       url: 'https://api.yelp.com/v3/businesses/search?location=' + req.query.location + '&categories='  + req.query.category,

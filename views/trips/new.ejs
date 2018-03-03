@@ -1,10 +1,26 @@
 <h1>Add a Trip</h1>
 
-<form action="/trips" method="POST">
-  <div class="form-group">
-    <label for="city">City</label>
-    <input type="text" class="form-control" id="city" name="city" required>
-  </div>
-
-  <input type="submit" class="waves-effect waves-light btn">
-</form>
+<div class="row col s12">
+  <form method="POST" class="col s12" action="/trips">
+      <div class="input-field col s12">
+        <select id="cityselect" name="city">
+          <option value="" disabled selected>Select a destination...</option>
+          <option value="Berlin" name="city">Berlin</option>
+          <option value="Edinburgh" name="city">Edinburgh</option>
+          <option value="Hong Kong" name="city">Hong Kong</option>
+          <option value="London" name="city">London</option>
+          <option value="Madrid" name="city">Madrid</option>
+          <option value="New York" name="city">New York</option>
+          <option value="Oslo" name="city">Oslo</option>
+          <option value="Paris" name="city">Paris</option>
+          <option value="Rio de Janeiro" name="city">Rio de Janeiro</option>
+          <option value="Rome" name="city">Rome</option>
+          <option value="San Francisco" name="city">San Francisco</option>
+          <option value="Sydney" name="city">Sydney</option>
+          <option value="Tokyo" name="city">Tokyo</option>
+        </select>
+        <label>Where would you like to go?</label>
+      </div>
+      <input type="submit" class="waves-effect waves-light btn">
+  </form>
+</div>
