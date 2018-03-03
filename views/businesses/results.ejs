@@ -12,6 +12,22 @@
             <p>Number of Reviews: <%= business.review_count %></p>
             <p>Price: <%= business.price %></p>
             <p>Address: <%= business.location.display_address %></p>
+            <form action="/trips/<%= tripId %>/businesses" method="POST">
+              <input type="hidden" name="name" value="<%= business.name %>">
+              <input type="hidden" name="url" value="https://www.yelp.com/biz/<%= business.id %>">
+              <select name="category">
+                <option value="" disabled selected>Select a category...</option>
+                <option value="active">Active/Outdoor</option>
+                <option value="arts">Arts/Entertainment</option>
+                <option value="beautysvc">Beauty/Spas</option>
+                <option value="food">Food</option>
+                <option value="hotelstravel">Hotels/Travel</option>
+                <option value="nightlife">Nightlife</option>
+                <option value="restaurants">Restaurants</option>
+                <option value="shopping">Shopping</option>
+              </select>
+              <button class="btn waves-effect waves-light" type="submit" name="action">Save</button>
+            </form>
           </li>
         </ul>
       </div>

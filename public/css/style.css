@@ -5,3 +5,7 @@
 .categories {
   display: none;
 }
+
+.parallax-container {
+      height: 400px;
+}

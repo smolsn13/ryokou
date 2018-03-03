@@ -1,5 +1,10 @@
 <h1><%= trip.city %></h1>
 
+<% business.forEach(function(item) { %>
+  <p><%= item.name %></p>
+<% }); %>
+
+
 <div class="row">
   <form method="GET" id="main" class="col s12" action="/trips/<%= trip.id %>/businesses">
       <div class="input-field col s12">

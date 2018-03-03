@@ -57,7 +57,7 @@ router.get('/:id', isLoggedIn, function(req, res) {
   })
   .then(function(trip) {
     if (!trip) throw Error();
-    res.render('trips/show', { trip: trip });
+    res.render('trips/show', { trip: trip, business: db.business });
   })
   .catch(function(error) {
     res.status(400).render('main/404');
@@ -79,14 +79,15 @@ router.get('/:id/businesses', function(req, res) {
       if (!error && response.statusCode === 200) {
         // res.json(JSON.parse(body));
         var dataObj = JSON.parse(body);
-        console.log(dataObj);
-        res.render('businesses/results', {businesses: dataObj});
+        console.log(dataObj.businesses[0].categories);
+        res.render('businesses/results', {businesses: dataObj, tripId: req.params.id});
       }
     }
   request(options, callback);
 });
 
 router.post('/:id/businesses', function(req, res) {
+  console.log(req.params.id);
   db.trip.findById(req.params.id)
     .then(function(trip) {
       trip.createBusiness({
@@ -96,7 +97,8 @@ router.post('/:id/businesses', function(req, res) {
       })
     })
     .then(function(trip) {
-      res.redirect('/trips');
+      console.log('business created');
+      res.redirect('/trips/' + req.params.id);
     })
       .catch(function(error) {
         res.status(400).render('main/404');

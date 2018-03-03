@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $('select').material_select();
+  $('.parallax').parallax();
 
   $('#categoryselect').change(function() {
     $('.categories').hide();
@@ -43,4 +44,6 @@ $(document).ready(function() {
       console.log(data);
     });
   });
- });
+
+
+});
