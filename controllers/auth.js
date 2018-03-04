@@ -19,19 +19,19 @@ router.post('/signup', function(req, res) {
   }).spread(function(user, created) {  //use spread promise because it is returning two values (similar to 'then' but for multiple values)
     if (created) {
       //user was created
-      console.log('User created');
+      // console.log('User created');
       passport.authenticate('local', {  // authenticate user first, then redirect to '/'
         successRedirect: '/',
         successFlash: 'Account created and logged in'
       })(req, res);  // passport.authenticate returns a function, immediately called with req, res parameters
     } else {
       // email already exists in db
-      console.log('Email already exists');
+      // console.log('Email already exists');
       req.flash('error', 'Email already exists');  //use full request function since not inside the passport.authenticate function
       res.redirect('/auth/signup');
     }
   }).catch(function(error) {
-    console.log('An error occurred: ', error.message);
+    // console.log('An error occurred: ', error.message);
     req.flash('error', error.message);
     res.redirect('/auth/signup');
   });
@@ -50,7 +50,7 @@ router.post('/login', passport.authenticate('local', {
 
 router.get('/logout', function(req, res) {
   req.logout();
-  console.log('logged out');
+  // console.log('logged out');
   req.flash('success', 'You have logged out!');  //this is how to use flash without passport
   res.redirect('/');
 });
