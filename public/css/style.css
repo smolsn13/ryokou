@@ -21,9 +21,28 @@
 }
 
 .parallax-container {
-      height: 400px;
+  height: 400px;
 }
 
-.tripcontainer {
-  margin: 10px;
+.bizlink {
+  font-size: 20px;
+}
+
+.btn-small {
+  font-size: 12px;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+#main {
+  margin-bottom: -5px;
 }

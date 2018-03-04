@@ -106,6 +106,15 @@ router.post('/:id/businesses', function(req, res) {
       });
 });
 
+router.delete('/:id/businesses/:idx', function(req, res) {
+  console.log('In the DELETE route...');
+  db.business.destroy({
+    where: {id: req.params.idx}
+  }).then(function() {
+    res.render('trips/show');
+  });
+});
+
 
 
 module.exports = router;

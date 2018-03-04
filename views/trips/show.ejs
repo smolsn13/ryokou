@@ -1,14 +1,12 @@
 <div class="tripcontainer">
-  <h1><%= trip.city %></h1>
-
-  <% trip.businesses.forEach(function(item) { %>
-    <p><%= item.name %></p>
-  <% }); %>
-
-
   <div class="row">
-    <form method="GET" id="main" class="col s12" action="/trips/<%= trip.id %>/businesses">
-        <div class="input-field col s12">
+    <div class="col s6 offset-s5">
+      <h1><%= trip.city %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <form method="GET" id="main" class="col s8 offset-s3" action="/trips/<%= trip.id %>/businesses">
+        <div class="input-field col s8">
           <select id="categoryselect">
             <option value="" disabled selected>Select a category...</option>
             <option value="active, All" id="active">Active/Outdoor</option>
@@ -24,169 +22,185 @@
         </div>
     </form>
   </div>
-  <br />
-
-  <div class="row categories" id="activeform">
-    <form class="col s6" action="/trips/<%= trip.id %>/businesses">
-        <div class="input-field col s6">
-          <select id="activeselect" name="category">
-            <option value="" disabled selected>Select a category...</option>
-            <option value="amusementparks, All">Amusement Parks</option>
-            <option value="aquariums, All">Aquariums</option>
-            <option value="bungeejumping, All">Bungee Jumping</option>
-            <option value="parks, All">Parks</option>
-            <option value="zipline, All">Ziplining</option>
-          </select>
-          <label>What are you looking for?</label>
-          <input type="hidden" name="location" value="<%= trip.city %>">
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
-          <i class="material-icons right">search</i>
-        </button>
-    </form>
+  <div class="row">
+    <div class="categories" id="activeform">
+      <form action="/trips/<%= trip.id %>/businesses">
+          <div class="input-field col s4 offset-s4">
+            <select id="activeselect" name="category">
+              <option value="" disabled selected>Select a category...</option>
+              <option value="amusementparks, All">Amusement Parks</option>
+              <option value="aquariums, All">Aquariums</option>
+              <option value="bungeejumping, All">Bungee Jumping</option>
+              <option value="parks, All">Parks</option>
+              <option value="zipline, All">Ziplining</option>
+            </select>
+            <label>Choose one of the following:</label>
+            <input type="hidden" name="location" value="<%= trip.city %>">
+          </div>
+          <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Search
+            <i class="material-icons right">search</i>
+          </button>
+      </form>
+    </div>
   </div>
-
-  <div class="row categories" id="artsform">
-    <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
-        <div class="input-field col s6">
-          <select id="artselect" name="category">
-            <option value="" disabled selected>Select a category...</option>
-            <option value="movietheaters, All">Cinema</option>
-            <option value="festivals, All">Festivals</option>
-            <option value="museums, All">Museums</option>
-            <option value="musicvenues, All">Music Venues</option>
-            <option value="wineries">Wineries</option>
-          </select>
-          <label>What are you looking for?</label>
-          <input type="hidden" name="location" value="<%= trip.city %>">
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
-          <i class="material-icons right">search</i>
-        </button>
-    </form>
+  <div class="row">
+    <div class="categories" id="artsform">
+      <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+          <div class="input-field col s6 offset-s4">
+            <select id="artselect" name="category">
+              <option value="" disabled selected>Select a category...</option>
+              <option value="movietheaters, All">Cinema</option>
+              <option value="festivals, All">Festivals</option>
+              <option value="museums, All">Museums</option>
+              <option value="musicvenues, All">Music Venues</option>
+              <option value="wineries">Wineries</option>
+            </select>
+            <label>Choose one of the following:</label>
+            <input type="hidden" name="location" value="<%= trip.city %>">
+          </div>
+          <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Search
+            <i class="material-icons right">search</i>
+          </button>
+      </form>
+    </div>
   </div>
-
-  <div class="row categories" id="beautyform">
-    <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
-        <div class="input-field col s6">
-          <select id="beautyselect" name="category">
-            <option value="" disabled selected>Select a category...</option>
-            <option value="spas, All">Day Spas</option>
-            <option value="hair, All">Hair Salons</option>
-            <option value="othersalons, All">Nail Salons</option>
-            <option value="piercing, All">Piercing</option>
-            <option value="tattoo, All">Tattoo</option>
-          </select>
-          <label>What are you looking for?</label>
-          <input type="hidden" name="location" value="<%= trip.city %>">
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
-          <i class="material-icons right">search</i>
-        </button>
-    </form>
+  <div class="row">
+    <div class="categories" id="beautyform">
+      <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+          <div class="input-field col s6 offset-s4">
+            <select id="beautyselect" name="category">
+              <option value="" disabled selected>Select a category...</option>
+              <option value="spas, All">Day Spas</option>
+              <option value="hair, All">Hair Salons</option>
+              <option value="othersalons, All">Nail Salons</option>
+              <option value="piercing, All">Piercing</option>
+              <option value="tattoo, All">Tattoo</option>
+            </select>
+            <label>Choose one of the following:</label>
+            <input type="hidden" name="location" value="<%= trip.city %>">
+          </div>
+          <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Search
+            <i class="material-icons right">search</i>
+          </button>
+      </form>
+    </div>
   </div>
-
-  <div class="row categories" id="foodform">
-    <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
-        <div class="input-field col s6">
-          <select id="foodselect" name="category">
-            <option value="" disabled selected>Select a category...</option>
-            <option value="food, All">Beer, Wine & Spirits</option>
-            <option value="coffee, All">Coffee & Tea</option>
-            <option value="desserts, All">Desserts</option>
-            <option value="foodtrucks">Food Trucks</option>
-            <option value="gourmet">Gourmet Foods (candy, cheese, healthfoods, meat, seafood)</option>
-          </select>
-          <label>What are you looking for?</label>
-          <input type="hidden" name="location" value="<%= trip.city %>">
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
-          <i class="material-icons right">search</i>
-        </button>
-    </form>
+  <div class="row">
+    <div class="categories" id="foodform">
+      <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+          <div class="input-field col s6 offset-s4">
+            <select id="foodselect" name="category">
+              <option value="" disabled selected>Select a category...</option>
+              <option value="food, All">Beer, Wine & Spirits</option>
+              <option value="coffee, All">Coffee & Tea</option>
+              <option value="desserts, All">Desserts</option>
+              <option value="foodtrucks">Food Trucks</option>
+              <option value="gourmet">Gourmet Foods (candy, cheese, healthfoods, meat, seafood)</option>
+            </select>
+            <label>Choose one of the following:</label>
+            <input type="hidden" name="location" value="<%= trip.city %>">
+          </div>
+          <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Search
+            <i class="material-icons right">search</i>
+          </button>
+      </form>
+    </div>
   </div>
-
-  <div class="row categories" id="hotelsform">
-    <form method="GET"  class="col s6" action="/trips/<%= trip.id %>/businesses">
-        <div class="input-field col s6">
-          <select id="hotelselect" name="category">
-            <option value="" disabled selected>Select a category...</option>
-            <option value="bedbreakfast">Bed & Breakfast</option>
-            <option value="carrental, All">Car Rentals</option>
-            <option value="hotels, All">Hotels</option>
-            <option value="resorts, All">Resorts</option>
-            <option value="tours, All">Tours</option>
-          </select>
-          <label>What are you looking for?</label>
-          <input type="hidden" name="location" value="<%= trip.city %>">
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
-          <i class="material-icons right">search</i>
-        </button>
-    </form>
+  <div class="row">
+    <div class="categories" id="hotelsform">
+      <form method="GET"  class="col s6" action="/trips/<%= trip.id %>/businesses">
+          <div class="input-field col s6 offset-s4">
+            <select id="hotelselect" name="category">
+              <option value="" disabled selected>Select a category...</option>
+              <option value="bedbreakfast">Bed & Breakfast</option>
+              <option value="carrental, All">Car Rentals</option>
+              <option value="hotels, All">Hotels</option>
+              <option value="resorts, All">Resorts</option>
+              <option value="tours, All">Tours</option>
+            </select>
+            <label>Choose one of the following:</label>
+            <input type="hidden" name="location" value="<%= trip.city %>">
+          </div>
+          <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Search
+            <i class="material-icons right">search</i>
+          </button>
+      </form>
+    </div>
   </div>
-
-  <div class="row categories" id="nightlifeform">
-    <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
-        <div class="input-field col s6">
-          <select id="nightlifeselect" name="category">
-            <option value="" disabled selected>Select a category...</option>
-            <option value="bars, All">Bars</option>
-            <option value="comedyclubs">Comedy Clubs</option>
-            <option value="danceclubs, All">Dance Clubs</option>
-            <option value="karaoke, All">Karaoke</option>
-            <option value="pianobars">Piano Bars</option>
-          </select>
-          <label>What are you looking for?</label>
-          <input type="hidden" name="location" value="<%= trip.city %>">
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
-          <i class="material-icons right">search</i>
-        </button>
-    </form>
+  <div class="row">
+    <div class="categories" id="nightlifeform">
+      <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+          <div class="input-field col s6 offset-s4">
+            <select id="nightlifeselect" name="category">
+              <option value="" disabled selected>Select a category...</option>
+              <option value="bars, All">Bars</option>
+              <option value="comedyclubs">Comedy Clubs</option>
+              <option value="danceclubs, All">Dance Clubs</option>
+              <option value="karaoke, All">Karaoke</option>
+              <option value="pianobars">Piano Bars</option>
+            </select>
+            <label>Choose one of the following:</label>
+            <input type="hidden" name="location" value="<%= trip.city %>">
+          </div>
+          <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Search
+            <i class="material-icons right">search</i>
+          </button>
+      </form>
+    </div>
   </div>
-
-  <div class="row categories" id="restaurantsform">
-    <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
-        <div class="input-field col s6">
-          <select id="restaurantselect" name="category">
-            <option value="" disabled selected>Select a category...</option>
-            <option value="asianfusion, All">Asian Fusion</option>
-            <option value="breakfast_brunch, All">Breakfast & Brunch</option>
-            <option value="cafes">Cafes</option>
-            <option value="delis">Delis</option>
-            <option value="hotdogs, All">Fast Food</option>
-          </select>
-          <label>What are you looking for?</label>
-          <input type="hidden" name="location" value="<%= trip.city %>">
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
-          <i class="material-icons right">search</i>
-        </button>
-    </form>
+  <div class="row">
+    <div class="categories" id="restaurantsform">
+      <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+          <div class="input-field col s6 offset-s4">
+            <select id="restaurantselect" name="category">
+              <option value="" disabled selected>Select a category...</option>
+              <option value="asianfusion, All">Asian Fusion</option>
+              <option value="breakfast_brunch, All">Breakfast & Brunch</option>
+              <option value="cafes">Cafes</option>
+              <option value="delis">Delis</option>
+              <option value="hotdogs, All">Fast Food</option>
+            </select>
+            <label>Choose one of the following:</label>
+            <input type="hidden" name="location" value="<%= trip.city %>">
+          </div>
+          <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Search
+            <i class="material-icons right">search</i>
+          </button>
+      </form>
+    </div>
   </div>
-
-  <div class="row categories" id="shoppingform">
-    <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
-        <div class="input-field col s6">
-          <select id="shoppingselect" name="category">
-            <option value="" disabled selected>Select a category...</option>
-            <option value="media, All">Books, Magazines, Music & Video</option>
-            <option value="deptstores, All">Department Stores</option>
-            <option value="fashion, All">Fashion</option>
-            <option value="publicmarkets, All">Public Markets</option>
-            <option value="souvenirs">Souvenir Shops</option>
-          </select>
-          <label>What are you looking for?</label>
-          <input type="hidden" name="location" value="<%= trip.city %>">
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
-          <i class="material-icons right">search</i>
-        </button>
-    </form>
+  <div class="row">
+    <div class="categories" id="shoppingform">
+      <form method="GET" class="col s6" action="/trips/<%= trip.id %>/businesses">
+          <div class="input-field col s6 offset-s4">
+            <select id="shoppingselect" name="category">
+              <option value="" disabled selected>Select a category...</option>
+              <option value="media, All">Books, Magazines, Music & Video</option>
+              <option value="deptstores, All">Department Stores</option>
+              <option value="fashion, All">Fashion</option>
+              <option value="publicmarkets, All">Public Markets</option>
+              <option value="souvenirs">Souvenir Shops</option>
+            </select>
+            <label>Choose one of the following:</label>
+            <input type="hidden" name="location" value="<%= trip.city %>">
+          </div>
+          <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Search
+            <i class="material-icons right">search</i>
+          </button>
+      </form>
+    </div>
   </div>
-
-  <br />
-
+  <% trip.businesses.forEach(function(item) { %>
+  <div class="row">
+    <div class="col s4 offset-s3">
+      <p class="biz">
+        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="#">Edit</a>
+        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+      </p>
+    </div>
+  </div>
+  <% }); %>
+  <hr />
   <a href="/trips">&larr; Back to My Trips</a>
 </div>

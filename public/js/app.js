@@ -1,13 +1,12 @@
 $(document).ready(function() {
-  $('select').material_select();
-  $('.parallax').parallax();
+  $('select').material_select(); // this is for the Materialize select dropdowns
+  $('.parallax').parallax();  // this is for the Materialize parallax on the homepage
 
   $('#categoryselect').change(function() {
     $('.categories').hide();
     var categoryselect = $('#categoryselect').val();
-    // categoryselect = parseInt(categoryselect); // val() returns a string and we want an integer
     switch (categoryselect) {
-      case 'active, All': // 'amusementparks' change all switch cases to text instead of integers, remove the parseInt line
+      case 'active, All': // switch case looks for which parent category was selected, displays next form
         $('#activeform').show();
         break;
       case 'arts, All':
@@ -34,16 +33,25 @@ $(document).ready(function() {
       }
   });
 
-  $('form').submit(function(e) {
-    e.preventDefault;
-    var url = $(this).attr('action');
+  // $('form').submit(function(e) {  // submit function for the forms
+  //   e.preventDefault();
+  //   var url = $(this).attr('action');
+  //   $.ajax({
+  //     dataType: 'json',
+  //     url: url
+  //   }).done(function(data) {
+  //     console.log(data);
+  //   });
+  // });
+
+  $('.delete-link').click(function(e) { // prevents normal click function, sends ajax call to Delete route
+    e.preventDefault();
     $.ajax({
-      dataType: 'json',
-      url: url
-    }).done(function(data) {
-      console.log(data);
+      url: $(this).attr('href'),
+      method: 'DELETE'
+    }).success(function(data) {
+      window.location.href = "/trips/show";
     });
   });
-
 
 });
