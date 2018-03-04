@@ -57,6 +57,7 @@ router.get('/:id', isLoggedIn, function(req, res) {
   })
   .then(function(trip) {
     if (!trip) throw Error();
+    console.log('this is the db data:' + db.business);
     res.render('trips/show', { trip: trip, business: db.business });
   })
   .catch(function(error) {

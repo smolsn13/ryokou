@@ -1,5 +1,19 @@
-.container {
-  margin-top: 50px;
+#sunset {
+  width: 2000px;
+  height: 1000px;
+}
+
+#createaccount {
+  text-align: center;
+  margin: 50px auto auto auto;
+}
+
+.brand-logo {
+  margin-left: 20px;
+}
+
+.signup-container {
+  margin: 70px;
 }
 
 .categories {
