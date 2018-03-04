@@ -1,0 +1,29 @@
+<h2>Move to a different category:</h2>
+
+<form action="/trips/<%= trip.id %>/businesses" id="edit-tag">
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" id="name" name="name" value="<%= tag.name %>">
+  </div>
+  <input type="submit" value="Change It!" class="btn btn-success"/>
+</form>
+
+<div class="row">
+  <form id="main" class="col s8 offset-s3" action="/trips/<%= trip.id %>/businesses">
+      <div class="input-field col s8">
+        <select id="newcategory" name="category">
+          <option value="" disabled selected>Select a new category...</option>
+          <option value="active" id="active">Active/Outdoor</option>
+          <option value="arts" id="arts">Arts/Entertainment</option>
+          <option value="beautysvc" id="beauty">Beauty/Spas</option>
+          <option value="food" id="food">Food</option>
+          <option value="hotelstravel" id="hotels">Hotels/Travel</option>
+          <option value="nightlife" id="nightlife">Nightlife</option>
+          <option value="restaurants" id="restaurants">Restaurants</option>
+          <option value="shopping" id="shopping">Shopping</option>
+        </select>
+        <label>Move this business to a different category:</label>
+      </div>
+      <input type="submit" value="Change It" class="edit-biz btn waves-effect waves-light offset-s4">
+  </form>
+</div>

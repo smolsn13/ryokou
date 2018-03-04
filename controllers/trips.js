@@ -106,12 +106,29 @@ router.post('/:id/businesses', function(req, res) {
       });
 });
 
+router.get('/:id/businesses/:idx/edit', function(req, res) {
+  db.business.findById(req.params.idx).then(function(business) {
+    res.render('businesses/edit', {business: business});
+  });
+});
+
+router.put('/:id', function(req, res) {
+  db.business.update({
+    category: req.body.category
+  }, {
+    fields: ['category'],
+    where: {id: req.params.idx}
+  }).then(function(tag) {
+    res.send("success!");
+  });
+});
+
 router.delete('/:id/businesses/:idx', function(req, res) {
   console.log('In the DELETE route...');
   db.business.destroy({
     where: {id: req.params.idx}
   }).then(function() {
-    res.render('trips/show');
+    res.redirect('/trips/' + req.params.id);
   });
 });
 

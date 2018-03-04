@@ -54,4 +54,17 @@ $(document).ready(function() {
     });
   });
 
+  $('.edit-biz').submit(function(e) {
+    e.preventDefault();  //prevents the GET request it would normally perform
+    $.ajax({
+      url: $(this).attr('action'),
+      method: 'PUT',
+      data: {
+        category: $('#newcategory').val()
+      }
+    }).success(function(data) {
+      window.location.href = "/trips/show";
+    });
+  });
+
 });
