@@ -193,11 +193,11 @@
   <div class="row">
     <hr class="col s10 offset-s1">
   </div>
-  <% trip.businesses.forEach(function(item) { %>
+  <h5>Active/Outdoor</h5>
+  <% trip.businesses.filter(function(item) { %>
   <div class="row">
-    <% if (item.category === 'active') { %>
     <div class="col s4 categorycol" id="activecol">
-      <h5>Active/Outdoor</h5>
+      <% if (item.category === 'active') { %>
       <ul>
         <li class="biz">
           <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
@@ -205,76 +205,124 @@
           <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
         </li>
       </ul>
+      <% }; %>
     </div>
-    <% } else if (item.category === 'arts') { %>
-    <div class="col s4 categorycol" id="artscol">
-      <h5>Arts/Entertainment</h5>
-      <ul>
-        <li class="biz">
-          <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
-          <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
-          <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
-        </li>
-      </ul>
-    </div>
-    <% } else if (item.category === 'beautysvc') { %>
-    <div class="col s4 categorycol" id="beautycol">
-      <h5>Beauty/Spas</h5>
-      <p class="biz">
-        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
-        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
-        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
-      </p>
-    </div>
-    <% } else if (item.category === 'food') { %>
-    <div class="col s4 categorycol" id="foodcol">
-      <h5>Food</h5>
-      <p class="biz">
-        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
-        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
-        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
-      </p>
-    </div>
-    <% } else if (item.category === 'hotels') { %>
-    <div class="col s4 categorycol" id="hotelscol">
-      <h5>Hotels/Travel</h5>
-      <p class="biz">
-        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
-        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
-        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
-      </p>
-    </div>
-    <% } else if (item.category === 'nightlife') { %>
-    <div class="col s4 categorycol" id="nightlifecol">
-      <h5>Nightlife</h5>
-      <p class="biz">
-        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
-        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
-        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
-      </p>
-    </div>
-    <% } else if (item.category === 'restaurants') { %>
-    <div class="col s4 categorycol" id="restaurantscol">
-      <h5>Restaurants</h5>
-      <p class="biz">
-        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
-        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
-        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
-      </p>
-    </div>
-    <% } else if (item.category === 'shopping') { %>
-    <div class="col s4 categorycol" id="shoppingcol">
-      <h5>Shopping</h5>
-      <p class="biz">
-        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
-        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
-        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
-      </p>
-    </div>
-    <% }; %>
   </div>
   <% }); %>
+  <h5>Arts/Entertainment</h5>
+  <% trip.businesses.filter(function(item) { %>
+  <div class="row">
+    <div class="col s4 categorycol" id="artscol">
+    <% if (item.category === 'arts') { %>
+      <ul>
+        <li class="biz">
+          <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+          <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+          <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+        </li>
+      </ul>
+      <% }; %>
+    </div>
+  </div>
+  <% }); %>
+  <h5>Beauty/Spas</h5>
+  <% trip.businesses.filter(function(item) { %>
+  <div class="row">
+    <div class="col s4 categorycol" id="beautycol">
+    <% if (item.category === 'beautysvc') { %>
+      <ul>
+        <li class="biz">
+          <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+          <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+          <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+        </li>
+      </ul>
+      <% }; %>
+    </div>
+  </div>
+  <% }); %>
+  <h5>Food</h5>
+  <% trip.businesses.filter(function(item) { %>
+  <div class="row">
+    <div class="col s4 categorycol" id="foodcol">
+    <% if (item.category === 'food') { %>
+      <ul>
+        <li class="biz">
+          <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+          <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+          <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+        </li>
+      </ul>
+      <% }; %>
+    </div>
+  </div>
+  <% }); %>
+  <h5>Hotels/Travel</h5>
+  <% trip.businesses.filter(function(item) { %>
+  <div class="row">
+    <div class="col s4 categorycol" id="hotelscol">
+    <% if (item.category === 'hotelstravel') { %>
+      <ul>
+        <li class="biz">
+          <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+          <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+          <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+        </li>
+      </ul>
+      <% }; %>
+    </div>
+  </div>
+  <% }); %>
+  <h5>Nightlife</h5>
+  <% trip.businesses.filter(function(item) { %>
+  <div class="row">
+    <div class="col s4 categorycol" id="nightlifecol">
+    <% if (item.category === 'nightlife') { %>
+      <ul>
+        <li class="biz">
+          <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+          <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+          <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+        </li>
+      </ul>
+      <% }; %>
+    </div>
+  </div>
+  <% }); %>
+  <h5>Restaurants</h5>
+  <% trip.businesses.filter(function(item) { %>
+    <div class="row">
+      <div class="col s4 categorycol" id="restaurantscol">
+        <% if (item.category === 'restaurants') { %>
+      <ul>
+        <li class="biz">
+          <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+          <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+          <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+        </li>
+      </ul>
+      <% }; %>
+    </div>
+  </div>
+  <% }); %>
+  <h5>Shopping</h5>
+  <% trip.businesses.filter(function(item) { %>
+    <div class="row">
+      <div class="col s4 categorycol" id="shoppingcol">
+    <% if (item.category === 'shopping') { %>
+      <ul>
+        <li class="biz">
+          <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+          <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+          <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+        </li>
+      </ul>
+      <% }; %>
+    </div>
+  </div>
+  <% }); %>
+</div>
 
-
+<div class="row">
   <a href="/trips">&larr; Back to My Trips</a>
 </div>

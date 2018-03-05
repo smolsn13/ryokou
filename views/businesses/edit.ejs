@@ -1,7 +1,11 @@
-<h2>Move  a different category:</h2>
+<div class="row">
+  <div class="col s8 offset-s2">
+    <h4>Move <%= business.name %> to a different category?</h4>
+  </div>
+</div>
 
 <div class="row">
-  <form method="PUT" class="col s8 offset-s3" action="/trips/<%= business.tripId %>/businesses">
+  <form id="edit-biz" class="col s8 offset-s3" action="/trips/<%= business.tripId %>/businesses/<%= business.id %>">
       <div class="input-field col s8">
         <select id="newcategory" name="category">
           <option value="" disabled selected>Select a new category...</option>
@@ -16,6 +20,6 @@
         </select>
         <label>Move this business to a different category:</label>
       </div>
-      <input type="submit" value="Change It" class="edit-biz btn waves-effect waves-light offset-s4">
+      <input type="submit" value="Change It" class="btn waves-effect waves-light offset-s4">
   </form>
 </div>

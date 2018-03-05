@@ -33,7 +33,7 @@ $(document).ready(function() {
       }
   });
 
-  
+
 
   // $('form').submit(function(e) {  // submit function for the forms
   //   e.preventDefault();
@@ -56,7 +56,7 @@ $(document).ready(function() {
     });
   });
 
-  $('.edit-biz').submit(function(e) {
+  $('#edit-biz').submit(function(e) {
     e.preventDefault();  //prevents the GET request it would normally perform
     $.ajax({
       url: $(this).attr('action'),

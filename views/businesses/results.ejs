@@ -1,5 +1,7 @@
 <div class="row">
-  <h1>Some places you may want to visit:</h1>
+  <div class="col s8 offset-s3">
+    <h3>Some places you may want to visit:</h3>
+  </div>
 </div>
 
 <% businesses.businesses.forEach(function(business) { %>
@@ -30,7 +32,7 @@
                 <option value="shopping">Shopping</option>
               </select>
               <div class="row">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Save</button>
+                <button class="btn waves-effect waves-light" type="submit" name="action" required>Save</button>
               </div>
               <br />
             </form>

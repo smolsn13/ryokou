@@ -108,19 +108,19 @@ router.post('/:id/businesses', function(req, res) {
 router.get('/:id/businesses/:idx/edit', function(req, res) {
   db.business.findById(req.params.idx)
   .then(function(business) {
-    console.log('this is the business data' + business);
     res.render('businesses/edit', {business: business});
   });
 });
 
 router.put('/:id/businesses/:idx', function(req, res) {
+  console.log('in the PUT route');
   db.business.update({
     category: req.body.category
   }, {
     fields: ['category'],
     where: {id: req.params.idx}
-  }).then(function(tag) {
-    res.send("success!");
+  }).then(function(business) {
+    res.render('trips/show');
   });
 });
 
