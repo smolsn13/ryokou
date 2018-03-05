@@ -43,26 +43,6 @@ app.get('/', function(req, res) {
 app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
-//
-// app.get('/search', function(req, res) {
-//
-// var options =
-//   {
-//     url: 'https://api.yelp.com/v3/businesses/search?location=Seattle&categories=food',
-//     headers: {
-//       'Authorization': 'Bearer' + ' ' + process.env.YELP_KEY
-//     }
-//   };
-//
-// function callback(error, response, body) {
-//     if (!error && response.statusCode === 200) {
-//       var dataObj = JSON.parse(body);
-//       console.dir(dataObj);
-//       res.send(dataObj);
-//     }
-//   }
-// request(options, callback);
-// });
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/trips', require('./controllers/trips'));

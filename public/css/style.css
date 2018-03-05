@@ -12,6 +12,11 @@
   font-size: 20px;
 }
 
+.tripimage {
+  height: 400px;
+  width: 400px;
+}
+
 .notrips {
   font-size: 20px;
 }

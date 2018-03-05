@@ -1,14 +1,32 @@
-<div class="nav-wrapper col s12">
-  <nav class="col s12">
+<nav class="nav blue">
+  <div class="nav-wrapper col s12">
       <a href="/" class="brand-logo">venturesome</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/auth/signup">Signup</a></li>
-        <li><a href="/auth/login">Login</a></li>
-        <li><a href="/auth/logout">Logout</a></li>
-        <li><a href="/trips">My Trips</a></li>
+      <% if (currentUser !== undefined) { %>
+      <ul class="right hide-on-med-and-down nav-ul">
+        <li><a href="/trips">my trips</a></li>
+        <li><a href="/auth/logout">logout</a></li>
       </ul>
-  </nav>
-</div>
+      <%  } else { %>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/auth/signup">signup</a></li>
+        <li><a href="/auth/login">login</a></li>
+      </ul>
+      <% }; %>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/">home</a></li>
+        <li><a href="/trips">my trips</a></li>
+        <li><a href="/auth/login">login</a></li>
+        <li><a href="/auth/logout">logout</a></li>
+        <li><a href="/auth/signup">signup</a></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">login<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+
+
 
 <div class="parallax-container">
   <div class="parallax"><img src="img/norway.jpg"></div>
@@ -22,3 +40,26 @@
 <div class="parallax-container col s12">
   <div class="parallax"><img id="sunset" src="img/sunset.jpeg"></div>
 </div>
+
+<footer class="page-footer blue">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">venturesome</h5>
+        <p class="grey-text text-lighten-4">get out and venture some more.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/smolsn13"><img src="img/GitHub.png" />GitHub</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/scottmolsness"><img src="img/LinkedIn.png" />LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2018 Scott Molsness
+    </div>
+  </div>
+</footer>

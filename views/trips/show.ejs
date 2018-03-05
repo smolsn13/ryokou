@@ -5,6 +5,37 @@
     </div>
   </div>
   <div class="row">
+    <div class="col s4 offset-s4">
+    <% if (trip.city === 'New York') { %>
+      <img class="tripimage" src="../img/newyork.jpg">
+    <% } else if (trip.city === 'Berlin') { %>
+      <img class="tripimage" src="../img/berlin.jpg">
+    <% } else if (trip.city === 'Edinburgh') { %>
+      <img class="tripimage" src="../img/edinburgh.jpg">
+    <% } else if (trip.city === 'Hong Kong') { %>
+      <img class="tripimage" src="../img/hongkong.jpg">
+    <% } else if (trip.city === 'London') { %>
+      <img class="tripimage" src="../img/london.jpg">
+    <% } else if (trip.city === 'Oslo') { %>
+      <img class="tripimage" src="../img/oslo.jpg">
+    <% } else if (trip.city === 'Paris') { %>
+      <img class="tripimage" src="../img/paris.jpg">
+    <% } else if (trip.city === 'Rio de Janeiro') { %>
+      <img class="tripimage" src="../img/riodejaneiro.jpg">
+    <% } else if (trip.city === 'Rome') { %>
+      <img class="tripimage" src="../img/rome.jpg">
+    <% } else if (trip.city === 'San Francisco') { %>
+      <img class="tripimage" src="../img/sanfrancisco.jpg">
+    <% } else if (trip.city === 'Sydney') { %>
+      <img class="tripimage" src="../img/sydney.jpg">
+    <% } else if (trip.city === 'Tokyo') { %>
+      <img class="tripimage" src="../img/tokyo.jpg">
+    <% }; %>
+    </div>
+  </div>
+
+
+  <div class="row">
     <form method="GET" id="main" class="col s8 offset-s3" action="/trips/<%= trip.id %>/businesses">
         <div class="input-field col s8">
           <select id="categoryselect">
@@ -190,16 +221,18 @@
       </form>
     </div>
   </div>
+
   <div class="row">
     <hr class="col s10 offset-s1">
   </div>
+
+<div class="row">
+  <div class="col s4 categorycol" id="activecol">
   <h5>Active/Outdoor</h5>
   <% trip.businesses.filter(function(item) { %>
-  <div class="row">
-    <div class="col s4 categorycol" id="activecol">
       <% if (item.category === 'active') { %>
       <ul>
-        <li class="biz col s4">
+        <li class="biz">
           <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
           <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
           <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
@@ -207,12 +240,10 @@
       </ul>
       <% }; %>
     </div>
-  </div>
   <% }); %>
+  <div class="col s4 offset-s4 categorycol" id="artscol">
   <h5>Arts/Entertainment</h5>
   <% trip.businesses.filter(function(item) { %>
-  <div class="row">
-    <div class="col s4 categorycol" id="artscol">
     <% if (item.category === 'arts') { %>
       <ul>
         <li class="biz">
@@ -223,12 +254,10 @@
       </ul>
       <% }; %>
     </div>
-  </div>
   <% }); %>
+  <div class="col s4 offset-s8 categorycol" id="beautycol">
   <h5>Beauty/Spas</h5>
   <% trip.businesses.filter(function(item) { %>
-  <div class="row">
-    <div class="col s4 categorycol" id="beautycol">
     <% if (item.category === 'beautysvc') { %>
       <ul>
         <li class="biz">
@@ -239,8 +268,9 @@
       </ul>
       <% }; %>
     </div>
-  </div>
   <% }); %>
+</div>
+
   <h5>Food</h5>
   <% trip.businesses.filter(function(item) { %>
   <div class="row">

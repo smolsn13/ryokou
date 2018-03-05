@@ -42,7 +42,7 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', passport.authenticate('local', {
-  successFlash: 'You have logged in!',
+  // successFlash: 'You have logged in!',
   successRedirect: '/trips',
   failureRedirect: '/auth/login',
   failureFlash: 'Invalid username and/or password'
@@ -51,7 +51,7 @@ router.post('/login', passport.authenticate('local', {
 router.get('/logout', function(req, res) {
   req.logout();
   // console.log('logged out');
-  req.flash('success', 'You have logged out!');  //this is how to use flash without passport
+  // req.flash('success', 'You have logged out!');  //this is how to use flash without passport
   res.redirect('/');
 });
 
