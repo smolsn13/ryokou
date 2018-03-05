@@ -33,31 +33,19 @@ $(document).ready(function() {
       }
   });
 
-
-
-  // $('form').submit(function(e) {  // submit function for the forms
-  //   e.preventDefault();
-  //   var url = $(this).attr('action');
-  //   $.ajax({
-  //     dataType: 'json',
-  //     url: url
-  //   }).done(function(data) {
-  //     console.log(data);
-  //   });
-  // });
-
   $('.delete-link').click(function(e) { // prevents normal click function, sends ajax call to Delete route
     e.preventDefault();
     $.ajax({
       url: $(this).attr('href'),
       method: 'DELETE'
-    }).success(function(data) {
-      window.location.href = "/trips/show";
+    }).done(function(res) {
+      window.location.href = "/trips/" + res.id;
     });
   });
 
   $('.edit-biz').on('click', function(e) {
     e.preventDefault();  //prevents the GET request it would normally perform
+    var url = $('.edit-form').attr('action');
     $.ajax({
       url: url,
       method: 'PUT',

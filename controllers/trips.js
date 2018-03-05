@@ -129,7 +129,7 @@ router.delete('/:id/businesses/:idx', function(req, res) {
   db.business.destroy({
     where: {id: req.params.idx}
   }).then(function() {
-    res.redirect('/trips/' + req.params.id);
+    res.send({message: 'success', id: req.params.id})
   });
 });
 
