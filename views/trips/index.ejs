@@ -1,3 +1,31 @@
+<nav class="nav blue">
+  <div class="nav-wrapper col s12">
+      <a href="/" class="brand-logo">venturesome</a>
+      <% if (currentUser !== undefined) { %>
+      <ul class="right hide-on-med-and-down nav-ul">
+        <li><a href="/trips">my trips</a></li>
+        <li><a href="/auth/logout">logout</a></li>
+      </ul>
+      <%  } else { %>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/auth/signup">signup</a></li>
+        <li><a href="/auth/login">login</a></li>
+      </ul>
+      <% }; %>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/">home</a></li>
+        <li><a href="/trips">my trips</a></li>
+        <li><a href="/auth/login">login</a></li>
+        <li><a href="/auth/logout">logout</a></li>
+        <li><a href="/auth/signup">signup</a></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">login<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+
 <div class="row">
   <div class="col s4 offset-s5">
     <h1>My Trips</h1>
