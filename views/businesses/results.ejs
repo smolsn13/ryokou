@@ -11,11 +11,12 @@
         <ul>
           <li>
             <h5><%= business.name %></h5>
-            <img src="<%= business.image_url %>"</img>
+            <img class="bizimage" src="<%= business.image_url %>"</img>
             <p>Average Rating: <%= business.rating %></p>
             <p>Number of Reviews: <%= business.review_count %></p>
             <p>Price: <%= business.price %></p>
             <p>Address: <%= business.location.display_address %></p>
+            <p><a href="https://www.yelp.com/biz/<%= business.id %>">Yelp page</a></p>
             <form class="col s6" action="/trips/<%= tripId %>/businesses" method="POST">
               <input type="hidden" name="name" value="<%= business.name %>">
               <input type="hidden" name="url" value="https://www.yelp.com/biz/<%= business.id %>">
@@ -49,6 +50,12 @@
 <hr />
 
 <br />
+
+<div class="row">
+  <div class="center">
+    <p>Powered by Yelp Fusion API</p><img class="yelp" src="/img/Yelp.png" />
+  </div>
+</div>
 
 <div class="row">
   <a href="/">&larr; Back Home</a>

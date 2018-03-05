@@ -17,6 +17,16 @@
   width: 400px;
 }
 
+.bizimage {
+  width: 60%;
+  height: auto;
+}
+
+.yelp {
+  width: 10%;
+  height: auto;
+}
+
 .notrips {
   font-size: 20px;
 }
