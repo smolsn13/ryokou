@@ -5,21 +5,21 @@
 </div>
 
 <div class="row">
-  <form id="edit-biz" class="col s8 offset-s3" action="/trips/<%= business.tripId %>/businesses/<%= business.id %>">
+  <form method="PUT" class="col s8 offset-s3 edit-form" action="/trips/<%= business.tripId %>/businesses/<%= index %>">
       <div class="input-field col s8">
         <select id="newcategory" name="category">
           <option value="" disabled selected>Select a new category...</option>
-          <option value="active" id="active">Active/Outdoor</option>
-          <option value="arts" id="arts">Arts/Entertainment</option>
-          <option value="beautysvc" id="beauty">Beauty/Spas</option>
-          <option value="food" id="food">Food</option>
-          <option value="hotelstravel" id="hotels">Hotels/Travel</option>
-          <option value="nightlife" id="nightlife">Nightlife</option>
-          <option value="restaurants" id="restaurants">Restaurants</option>
-          <option value="shopping" id="shopping">Shopping</option>
+          <option value="active">Active/Outdoor</option>
+          <option value="arts">Arts/Entertainment</option>
+          <option value="beautysvc">Beauty/Spas</option>
+          <option value="food">Food</option>
+          <option value="hotelstravel">Hotels/Travel</option>
+          <option value="nightlife">Nightlife</option>
+          <option value="restaurants">Restaurants</option>
+          <option value="shopping">Shopping</option>
         </select>
         <label>Move this business to a different category:</label>
       </div>
-      <input type="submit" value="Change It" class="btn waves-effect waves-light offset-s4">
+      <input type="submit" value="Change It" class="edit-biz btn waves-effect waves-light offset-s4">
   </form>
 </div>

@@ -79,7 +79,7 @@ router.get('/:id/businesses', function(req, res) {
       if (!error && response.statusCode === 200) {
         // res.json(JSON.parse(body));
         var dataObj = JSON.parse(body);
-        console.log(dataObj.businesses[0].categories);
+        // console.log(dataObj.businesses[0].categories);
         res.render('businesses/results', {businesses: dataObj, tripId: req.params.id});
       }
     }
@@ -108,7 +108,7 @@ router.post('/:id/businesses', function(req, res) {
 router.get('/:id/businesses/:idx/edit', function(req, res) {
   db.business.findById(req.params.idx)
   .then(function(business) {
-    res.render('businesses/edit', {business: business});
+    res.render('businesses/edit', {business: business, index: req.params.idx});
   });
 });
 
@@ -119,8 +119,8 @@ router.put('/:id/businesses/:idx', function(req, res) {
   }, {
     fields: ['category'],
     where: {id: req.params.idx}
-  }).then(function(business) {
-    res.render('trips/show');
+  }).then(function() {
+    res.send({message: 'success', id: req.params.id})
   });
 });
 
