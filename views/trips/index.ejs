@@ -1,34 +1,33 @@
 <div class="row">
-  <div class="col s2 offset-s5">
-    <h1>Trips</h1>
+  <div class="col s4 offset-s5">
+    <h1>My Trips</h1>
   </div>
 </div>
 
 <div class="row">
-  <div class="col s6 offset-s3">
+  <div class="col s6 offset-s4">
 
-  <p>Here are your trips:</p>
+  <% if(trips.length < 1) { %>
+    <p class="notrips">You don't have any saved trips yet. Add a trip to get started!</p>
+  <% } else { %>
 
-
+    <p>Here are your trips:</p>
 
     <% trips.forEach(function(trip) { %>
 
-      <% if(trips.length < 1) { %>
-        <p class="text-info">You don't have any saved trips yet. Add a trip to get started!</p>
-      <% } else { %>
         <div class="row">
           <a href="/trips/<%= trip.id %>">
             <%= trip.city %>
           </a>
         </div>
-      <% } %>
-    <% }); %>
+      <% }); %>
+    <% }; %>
   </div>
 </div>
 
 <br />
 <div class="row">
-  <div class="col s4 offset-s4">
+  <div class="col s4 offset-s5">
     <span><a class="btn-floating btn-large waves-effect waves-light blue" href="/trips/new"><i class="material-icons">add</i></a></span><span id="addtrip">  Add a Trip</span>
   </div>
 </div>

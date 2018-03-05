@@ -57,7 +57,6 @@ router.get('/:id', isLoggedIn, function(req, res) {
   })
   .then(function(trip) {
     if (!trip) throw Error();
-    console.log('this is the db data:' + db.business);
     res.render('trips/show', { trip: trip});
   })
   .catch(function(error) {
@@ -107,12 +106,14 @@ router.post('/:id/businesses', function(req, res) {
 });
 
 router.get('/:id/businesses/:idx/edit', function(req, res) {
-  db.business.findById(req.params.idx).then(function(business) {
+  db.business.findById(req.params.idx)
+  .then(function(business) {
+    console.log('this is the business data' + business);
     res.render('businesses/edit', {business: business});
   });
 });
 
-router.put('/:id', function(req, res) {
+router.put('/:id/businesses/:idx', function(req, res) {
   db.business.update({
     category: req.body.category
   }, {

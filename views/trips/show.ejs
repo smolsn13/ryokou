@@ -190,17 +190,80 @@
       </form>
     </div>
   </div>
+  <div class="row">
+    <hr class="col s10 offset-s1">
+  </div>
   <% trip.businesses.forEach(function(item) { %>
   <div class="row">
-    <div class="col s4 offset-s3">
+    <% if (item.category === 'active') { %>
+    <div class="col s4 categorycol" id="activecol">
+      <h5>Active/Outdoor</h5>
       <p class="biz">
         <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
-        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="#">Edit</a>
+        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+      </p>
+    </div>
+    <% }; %>
+    <div class="col s4 categorycol" id="artscol">
+      <h5>Arts/Entertainment</h5>
+      <p class="biz">
+        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+      </p>
+    </div>
+    <div class="col s4 categorycol" id="beautycol">
+      <h5>Beauty/Spas</h5>
+      <p class="biz">
+        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+      </p>
+    </div>
+    <div class="col s4 categorycol" id="foodcol">
+      <h5>Food</h5>
+      <p class="biz">
+        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+      </p>
+    </div>
+    <div class="col s4 categorycol" id="hotelcol">
+      <h5>Hotels/Travel</h5>
+      <p class="biz">
+        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+      </p>
+    </div>
+    <div class="col s4 categorycol" id="nightlifecol">
+      <h5>Nightlife</h5>
+      <p class="biz">
+        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+      </p>
+    </div>
+    <div class="col s4 categorycol" id="restaurantscol">
+      <h5>Restaurants</h5>
+      <p class="biz">
+        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
+        <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
+      </p>
+    </div>
+    <div class="col s4 categorycol" id="shoppingcol">
+      <h5>Shopping</h5>
+      <p class="biz">
+        <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
+        <a class="btn-small waves-effect waves-light blue-grey lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>/edit">Edit</a>
         <a class="delete-link btn-small waves-effect waves-light red lighten-2" href="/trips/<%= trip.id %>/businesses/<%= item.id %>">Delete</a>
       </p>
     </div>
   </div>
   <% }); %>
-  <hr />
+
+
   <a href="/trips">&larr; Back to My Trips</a>
 </div>

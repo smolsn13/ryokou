@@ -33,6 +33,8 @@ $(document).ready(function() {
       }
   });
 
+  
+
   // $('form').submit(function(e) {  // submit function for the forms
   //   e.preventDefault();
   //   var url = $(this).attr('action');
