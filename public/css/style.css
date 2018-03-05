@@ -20,6 +20,34 @@
   display: block;
 }
 
+#artscol {
+  display: block;
+}
+
+#beautycol {
+  display: block;
+}
+
+#foodcol {
+  display: block;
+}
+
+#hotelscol {
+  display: block;
+}
+
+#nightlifecol {
+  display: block;
+}
+
+#restaurantscol {
+  display: block;
+}
+
+#shoppingcol {
+  display: block;
+}
+
 .notrips {
   font-size: 20px;
 }
