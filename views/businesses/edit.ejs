@@ -1,13 +1,5 @@
 <h2>Move to a different category:</h2>
 
-<form action="/trips/<%= trip.id %>/businesses" id="edit-tag">
-  <div class="form-group">
-    <label>Name:</label>
-    <input type="text" id="name" name="name" value="<%= tag.name %>">
-  </div>
-  <input type="submit" value="Change It!" class="btn btn-success"/>
-</form>
-
 <div class="row">
   <form id="main" class="col s8 offset-s3" action="/trips/<%= trip.id %>/businesses">
       <div class="input-field col s8">
