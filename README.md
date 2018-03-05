@@ -27,7 +27,7 @@ Here are some wireframes I created during the planning process.
 
 ## User Stories
 User 1: Frank is a college student looking for a summer getaway. He needs a quick, online way to organize his
-trip plans so he knows where to eat in New York with his limited budget.
+trip plans so he knows where to eat in New York with his limited budget. He also wants to know which bars are popular with college students.
 
 User 2: Sally is a working mom who has a limited amount of time to plan her family vacation. She wants to use Yelp to
 look up food options ahead of time, but doesn't want to write down all the restaurant names and addresses she finds.
@@ -48,13 +48,13 @@ The next day I worked on my routes and starting linking pages together. I also a
 
 On Days 4 and 5 I worked mostly on adding functionality to the Trips page, getting the search functions to display in select dropdown menus through Materialize. I added some jQuery logic to make dropdown menus appear depending on a previous dropdown selection, so users only see the relevant choice. I had difficulty getting businesses to appear on my trip page under specific categories, so this was my main goal going into the weekend.
 
-Days 6 and 7 were spent adding an edit and delete function to my businesses, so users can remove businesses they want to visit or change the category they are assigned to in their account. The PUT and DELETE routes were difficult to get working, but some trial and error with jQuery and the routes paid off in the end.
+The last two days were spent adding an edit and delete function to my businesses, so users can remove businesses they want to visit or change the assigned category in their account. The PUT and DELETE routes were difficult to get working, but some trial and error with jQuery and the routes paid off in the end. These were the most difficult part of the project, along with getting the lists of categories to display on the individual Trip page.
 
 ## Technologies Used
 * HTML, CSS, Javascript, jQuery
 * Node JS, Express, bcrypt, ejs
 * Materialize CSS
-* Sequelize, postgres
+* Sequelize, PostgreSQL
 
 ## Future Enhancements
 Some features I would like to add:
