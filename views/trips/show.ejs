@@ -299,10 +299,10 @@
   <% }); %>
 </div>
 
-  <h5>Food</h5>
-  <% trip.businesses.filter(function(item) { %>
-  <div class="row">
-    <div class="col s4 categorycol" id="foodcol">
+<div class="row">
+  <div class="col s4 categorycol" id="foodcol">
+    <h5>Food</h5>
+    <% trip.businesses.filter(function(item) { %>
     <% if (item.category === 'food') { %>
       <ul>
         <li class="biz">
@@ -313,12 +313,10 @@
       </ul>
       <% }; %>
     </div>
-  </div>
   <% }); %>
-  <h5>Hotels/Travel</h5>
-  <% trip.businesses.filter(function(item) { %>
-  <div class="row">
-    <div class="col s4 categorycol" id="hotelscol">
+  <div class="col s4 categorycol" id="hotelscol">
+    <h5>Hotels/Travel</h5>
+    <% trip.businesses.filter(function(item) { %>
     <% if (item.category === 'hotelstravel') { %>
       <ul>
         <li class="biz">
@@ -331,10 +329,9 @@
     </div>
   </div>
   <% }); %>
-  <h5>Nightlife</h5>
-  <% trip.businesses.filter(function(item) { %>
-  <div class="row">
-    <div class="col s4 categorycol" id="nightlifecol">
+  <div class="col s4 categorycol" id="nightlifecol">
+    <h5>Nightlife</h5>
+    <% trip.businesses.filter(function(item) { %>
     <% if (item.category === 'nightlife') { %>
       <ul>
         <li class="biz">
@@ -345,13 +342,14 @@
       </ul>
       <% }; %>
     </div>
-  </div>
   <% }); %>
-  <h5>Restaurants</h5>
-  <% trip.businesses.filter(function(item) { %>
-    <div class="row">
-      <div class="col s4 categorycol" id="restaurantscol">
-        <% if (item.category === 'restaurants') { %>
+  </div>
+
+<div class="row">
+  <div class="col s4 categorycol" id="restaurantscol">
+    <h5>Restaurants</h5>
+    <% trip.businesses.filter(function(item) { %>
+    <% if (item.category === 'restaurants') { %>
       <ul>
         <li class="biz">
           <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
@@ -361,13 +359,11 @@
       </ul>
       <% }; %>
     </div>
-  </div>
   <% }); %>
-  <h5>Shopping</h5>
-  <% trip.businesses.filter(function(item) { %>
-    <div class="row">
-      <div class="col s4 categorycol" id="shoppingcol">
-    <% if (item.category === 'shopping') { %>
+  <div class="col s4 categorycol" id="shoppingcol">
+    <h5>Shopping</h5>
+    <% trip.businesses.filter(function(item) { %>
+      <% if (item.category === 'shopping') { %>
       <ul>
         <li class="biz">
           <a class="bizlink" href="<%= item.url %>"><%= item.name %></a>
@@ -377,7 +373,6 @@
       </ul>
       <% }; %>
     </div>
-  </div>
   <% }); %>
 </div>
 

@@ -35,6 +35,7 @@ look up food options ahead of time, but doesn't want to write down all the resta
 ## API
 I used the Yelp Fusion API to search businesses that users can save to their account. No actual data is stored from the
 Yelp API, instead users save a publicly available url that links to a business Yelp page.
+[Yelp Fusion API](https://www.yelp.com/fusion)
 
 ## Development
 Day 1 was spent creating wireframes using Balsamiq Mockups and writing user stories to define why users would need
@@ -51,12 +52,13 @@ On Days 4 and 5 I worked mostly on adding functionality to the Trips page, getti
 The last two days were spent adding an edit and delete function to my businesses, so users can remove businesses they want to visit or change the assigned category in their account. The PUT and DELETE routes were difficult to get working, but some trial and error with jQuery and the routes paid off in the end. These were the most difficult part of the project, along with getting the lists of categories to display on the individual Trip page.
 
 ## Technologies Used
-* HTML, CSS, Javascript, jQuery
-* Node JS, Express, bcrypt, ejs
+* HTML5, CSS3, Javascript, jQuery
+* Node.js, Express, bcrypt, EJS
 * Materialize CSS
 * Sequelize, PostgreSQL
 
 ## Future Enhancements
 Some features I would like to add:
+* Search/input feature to allow users to choose their own city or their own categories to search, rather than selecting from a preset dropdown menu
 * A delete function to remove entire Trips
 * Additional styling to the Trip and Business results page
